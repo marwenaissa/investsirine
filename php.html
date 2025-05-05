@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact - INVEST - Agence Immobilière</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #333, transparent);
+    }
+
+    @keyframes fadeSlide {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-slide {
+      animation: fadeSlide 1s ease-out;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    @layer utilities {
+      .animate-marquee {
+        animation: marquee 15s linear infinite;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- Header -->
+  <header class="relative container mx-auto px-4 py-3">
+    <div class="flex items-center justify-between h-24">
+  
+      <!-- Bloc 1 : Logo -->
+      <div class="flex-shrink-0 ml-8 mt-10"> <!-- Augmentation de l'espacement -->
+        <a href="index.html">
+          <img src="Logo.png" alt="Logo INVEST" class="h-64 object-contain" /> <!-- Agrandissement du logo -->
+        </a>
+      </div>
+  
+      <!-- Bloc 2 : Menu centré verticalement -->
+      <ul class="flex justify-center items-center gap-8 text-xl font-semibold flex-grow"> <!-- Espacement du menu un peu plus large -->
+        <li><a href="achat.html" class="hover:text-[#131d44]">Achat</a></li>
+        <li><a href="location.html" class="hover:text-[#131d44]">Location</a></li>
+        <li><a href="vendre.html" class="hover:text-[#131d44]">Vendre</a></li>
+        <li><a href="apropos.html" class="hover:text-[#131d44]">À propos</a></li>
+        <li><a href="contact.html" class="hover:text-[#131d44]">Contact</a></li>
+      </ul>
+  
+      <!-- Bloc 3 : Langues en haut à droite + téléphone -->
+      <div class="relative w-44 h-full flex flex-col justify-between items-end pt-1 pb-1"> <!-- Augmentation de l'espacement du bloc des langues -->
+        <!-- Langues -->
+        <div class="text-xs text-red-600 font-bold flex gap-1">
+          <span class="hover:text-blue-800 cursor-pointer">FR</span>
+          <span class="text-gray-600">|</span>
+          <span class="hover:text-blue-800 cursor-pointer">AR</span>
+          <span class="text-gray-600">|</span>
+          <span class="hover:text-blue-800 cursor-pointer">ENG</span>
+        </div>
+  
+        <!-- Téléphone -->
+        <div class="flex items-center gap-1 text-sm text-blue-700 mt-3"> <!-- Espacement du téléphone -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.68l1.3 3.9a1 1 0 01-.21 1.02L9.28 10.6a16.01 16.01 0 006.11 6.11l1.99-1.84a1 1 0 011.02-.21l3.9 1.3a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C10.07 21 3 13.93 3 5z"/>
+          </svg>
+          <span>+216 28 444 303</span>
+        </div>
+      </div>
+  
+    </div>
+  </header>
+
+  <!-- Contact Form -->
+  <main class="container mx-auto px-4 py-8">
+    <section class="mb-16">
+      <h2 class="text-4xl font-bold text-center mb-8">Nous Contacter</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        
+        <!-- Formulaire de contact -->
+        <form action="#" method="POST" class="space-y-6">
+          <div>
+            <label for="nom" class="block text-gray-600 font-semibold">Nom</label>
+            <input type="text" id="nom" name="nom" class="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder="Votre nom" required>
+          </div>
+          <div>
+            <label for="email" class="block text-gray-600 font-semibold">Email</label>
+            <input type="email" id="email" name="email" class="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder="Votre email" required>
+          </div>
+          <div>
+            <label for="message" class="block text-gray-600 font-semibold">Message</label>
+            <textarea id="message" name="message" rows="5" class="w-full p-3 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" placeholder="Votre message" required></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="px-6 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-600">
+              Envoyer
+            </button>
+          </div>
+        </form>
+
+        <!-- Image de la section -->
+        <div class="h-[400px] w-full flex justify-center items-center">
+          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&h=500&dpr=2" alt="Image Contact" class="object-cover w-full h-full rounded-lg shadow-lg" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full px-4 py-8 bg-black text-white rounded-lg">
+    <div class="container mx-auto grid md:grid-cols-2 gap-8">
+      <div>
+        <h3 class="text-xl font-bold mb-4">Coordonnées</h3>
+        <p class="mb-2 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+          </svg>
+          12 Rue de l'Investissement, Paris
+        </p>
+        <p>Email : contact@invest.fr</p>
+        <p>Tél : +33 1 23 45 67 89</p>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4">Suivez-nous</h3>
+        <p>Instagram | Facebook | LinkedIn</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
