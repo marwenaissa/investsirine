@@ -92,7 +92,7 @@ foreach ($villas as $villa) {
                         if (is_bool($value)) {
                             echo $label . " : " . ($value ? "Oui" : "Non");
                         } else {
-                            echo $label . " : " . htmlspecialchars($value);
+                            echo $label . " : " .   ($value);
                         }
                         ?>
                     </li>

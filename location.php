@@ -80,7 +80,7 @@ $filteredVillas = array_filter($villas, function($villa) use ($villeFiltre, $typ
                     <a href="details.php?id=<?= $villa['id'] ?>&lang=<?= $lang ?>" class="mt-auto bg-white border-2 border-orange-500 hover:bg-orange-500 
                                 hover:text-white text-orange-500 font-semibold py-2 px-4 rounded-lg 
                                 w-full transition duration-300 text-center">
-                        Détails
+                        <?= $tr['details'] ?>
                     </a>
                 </div>
             </div>
