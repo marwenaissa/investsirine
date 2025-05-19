@@ -73,8 +73,8 @@ return [
     'form_message' => 'Message',
     'submit' => 'Send',
     'address' => '📍 123 Investment Avenue, Paris',
-    'email' => '📧 contact@invest.com',
-    'phone' => '📞 +33 1 23 45 67 89',
+    'email' => '📧 Email : contact@invest.com',
+    'phone' => '📞 +216 123 456',
     'video_title' => 'Presentation Video',
     'service_image_alt' => 'Customer service and professional contact',
         'contact_info' => 'Our Contact Information',
@@ -94,7 +94,13 @@ return [
 'room' => 'Room',
 'rooms' => 'Rooms',
 'more_than_5' => 'More than 5 Rooms',
-
+'FR' => 'FR',
+'ENG' => 'ENG',
+'AR' => 'AR',
+'villa_avec_vue_sur_mer_a_hammamet' => 'Villa with sea view in Hammamet',
+'local_commercial_au_lac_2' => 'Local commercial au Lac 2',
+'adresse_invest' => '12 Investment Street, Paris',
+'tel' => 'Phone : +216 123 456',
 
 
 ];

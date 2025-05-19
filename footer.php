@@ -1,20 +1,20 @@
 <footer class="w-full px-4 py-8 bg-black text-white rounded-lg">
   <div class="container mx-auto grid md:grid-cols-2 gap-8">
     <div>
-      <h3 class="text-xl font-bold mb-4"><?= $tr['contact_info'] ?></h3>
-      <p class="mb-2 flex items-center">
+      <h3 class="text-xl font-bold mb-4  <?= $lang === 'ar' ? 'text-right' : '' ?>"><?= $tr['contact_info'] ?></h3>
+      <p class="mb-2 flex items-center <?= $lang === 'ar' ? 'flex-row-reverse' : '' ?> <?= $lang === 'ar' ? 'text-right' : '' ?>">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
           <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
         </svg>
-        12 Rue de l'Investissement, Paris
+        <?= $tr['adresse_invest'] ?>
       </p>
-      <p>Email : contact@invest.fr</p>
-      <p>Tél : +33 1 23 45 67 89</p>
+      <p class=" <?= $lang === 'ar' ? 'text-right' : '' ?>"><?= $tr['email'] ?></p>
+      <p class=" <?= $lang === 'ar' ? 'text-right' : '' ?>"><?= $tr['tel'] ?></p>
     </div>
     
     <div>
-      <h3 class="text-xl font-bold mb-4"><?= $tr['follow_us'] ?></h3>
-      <div class="flex items-center gap-4 text-white">
+      <h3 class="text-xl font-bold mb-4  <?= $lang === 'ar' ? 'text-right' : '' ?>"><?= $tr['follow_us'] ?></h3>
+      <div class="flex items-center gap-4 text-white <?= $lang === 'ar' ? 'flex-row-reverse' : '' ?>">
         
         <!-- Instagram -->
         <a href="#" aria-label="Instagram" class="hover:text-pink-500 relative -top-[2px]">

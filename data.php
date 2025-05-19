@@ -4,9 +4,9 @@
 $villas = [
     [
         'id' => 1,
-        'nom' => 'Local commercial au Lac 2',
+        'nom' => 'local_commercial_au_lac_2',
         'prix' => 1200000,
-        'ville' => 'La Marsa',
+        'ville' => 'la_marsa',
         'type' => 'villa',
         'pieces' => 5,
         'description' => "Local moderne idéal pour bureaux ou commerce.",
@@ -29,9 +29,9 @@ $villas = [
     ],
     [
         'id' => 2,
-        'nom' => 'Villa avec vue sur mer à Hammamet',
+        'nom' => 'villa_avec_vue_sur_mer_a_hammamet',
         'prix' => 950000,
-        'ville' => 'Hammamet',
+        'ville' => 'hammamet',
         'type' => 'villa',
         'pieces' => 4,
         'description' => "Magnifique villa avec vue imprenable sur la mer.",

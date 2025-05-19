@@ -46,6 +46,7 @@ else
     <?php
         include("classes.php");
         $res1 = Estimation::lister();
+        $res2 = Contact::lister();
 
     ?>
 
@@ -301,15 +302,22 @@ else
             </div>
             <div class="card-body">
                 <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Dupont Jean <span class="badge badge-primary badge-pill">Appartement - Paris</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Martin Claire <span class="badge badge-primary badge-pill">Maison - Lyon</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Bernard Paul <span class="badge badge-primary badge-pill">Studio - Marseille</span>
-                    </li>
+                    <?php
+                    if (!empty($res1)) {
+                        foreach ($res1 as $estimation) {
+                            $nom = htmlspecialchars($estimation['nom']);
+                            $type = htmlspecialchars($estimation['type']);
+                            $localisation = htmlspecialchars($estimation['localisation']);
+
+                            echo '<li class="list-group-item d-flex justify-content-between align-items-center">';
+                            echo $nom;
+                            echo ' <span class="badge badge-primary badge-pill">' . $type . ' - ' . $localisation . '</span>';
+                            echo '</li>';
+                        }
+                    } else {
+                        echo '<li class="list-group-item">Aucune estimation trouvée.</li>';
+                    }
+                    ?>
                 </ul>
             </div>
         </div>
@@ -323,15 +331,20 @@ else
             </div>
             <div class="card-body">
                 <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Leblanc Marie <span class="badge badge-info badge-pill">m.leblanc@mail.com</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Petit Julien <span class="badge badge-info badge-pill">j.petit@mail.com</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        Durand Alice <span class="badge badge-info badge-pill">a.durand@mail.com</span>
-                    </li>
+                    <?php
+                    if (!empty($res2)) {
+                        foreach ($res2 as $contact) {
+                            $nom = htmlspecialchars($contact['nom']);
+                            $email = htmlspecialchars($contact['email']);
+
+                            echo '<li class="list-group-item d-flex justify-content-between align-items-center">';
+                            echo $nom . ' <span class="badge badge-info badge-pill">' . $email . '</span>';
+                            echo '</li>';
+                        }
+                    } else {
+                        echo '<li class="list-group-item">Aucun contact trouvé.</li>';
+                    }
+                    ?>
                 </ul>
             </div>
         </div>

@@ -64,19 +64,19 @@ $filteredVillas = array_filter($villas, function($villa) use ($villeFiltre, $typ
                          class="w-full h-full object-cover md:rounded-l-lg">
                 </div>
                 <div class="w-full md:w-2/5 p-4 sm:p-6 flex flex-col">
-                    <h2 class="text-xl sm:text-2xl font-bold mb-2"><?= $villa['nom'] ?></h2>
-                    <p class="text-lg text-green-600 font-semibold mb-4 sm:mb-6">
+                    <h2 class="text-xl sm:text-2xl font-bold mb-2 <?= $lang === 'ar' ? 'text-right' : '' ?>"><?= $tr[$villa['nom']] ?? $villa['nom'] ?></h2>
+                    <p class="text-lg text-green-600 font-semibold mb-4 sm:mb-6 <?= $lang === 'ar' ? 'text-right' : '' ?>">
                         <?= $tr['price'] ?> : <?= number_format($villa['prix'], 0, ',', ' ') ?> 
                     </p>
                     <div class="space-y-2 mb-4 sm:mb-6" <?= $lang === 'ar' ? 'dir="rtl"' : '' ?>>
                         <p class="text-sm sm:text-base text-gray-600 <?= $lang === 'ar' ? 'text-right' : '' ?>">
-                            <span class="font-medium"><?= $tr['type'] ?> :</span> <?= ucfirst($villa['type']) ?>
+                            <span class="font-medium"><?= $tr['type'] ?> :</span> <?= $tr[$villa['type']] ?? $villa['type'] ?>
                         </p>
                         <p class="text-sm sm:text-base text-gray-600 <?= $lang === 'ar' ? 'text-right' : '' ?>">
-                            <span class="font-medium"><?= $tr['rooms'] ?> :</span> <?= $villa['pieces'] ?>
+                            <span class="font-medium"><?= $tr['rooms'] ?> :</span> <?= $tr[$villa['pieces']] ?? $villa['pieces'] ?>
                         </p>
                         <p class="text-sm sm:text-base text-gray-600 <?= $lang === 'ar' ? 'text-right' : '' ?>">
-                            <span class="font-medium"><?= $tr['city'] ?> :</span> <?= $villa['ville'] ?>
+                            <span class="font-medium"><?= $tr['city'] ?> :</span> <?= $tr[$villa['ville']] ?? $villa['ville'] ?>
                         </p>
                     </div>
 

@@ -73,8 +73,8 @@ return [
     'form_message' => 'Message',
     'submit' => 'Envoyer',
     'address' => '📍 123 Avenue des Investissements, Paris',
-    'email' => '📧 contact@invest.fr',
-    'phone' => '📞 +33 1 23 45 67 89',
+    'email' => '📧 Email : contact@invest.fr',
+    'phone' => '📞 +216 123 456',
     'video_title' => 'Vidéo de présentation',
     'service_image_alt' => 'Service client et contact professionnel',
      'title' => 'Liste des villas',
@@ -103,7 +103,13 @@ return [
 'room' => 'Pièce',
 'rooms' => 'Pièces',
 'more_than_5' => 'Plus de 5 Pièces',
-
+'FR' => 'FR',
+'ENG' => 'ENG',
+'AR' => 'AR',
+'villa_avec_vue_sur_mer_a_hammamet' => 'Villa avec vue sur mer à Hammamet',
+'local_commercial_au_lac_2' => 'Local commercial au Lac 2',
+'adresse_invest' => '12 Rue de l\'Investissement, Paris',
+'tel' => 'Tél : +216 123 456',
 
 ];
 

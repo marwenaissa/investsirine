@@ -8,7 +8,7 @@ $tr = include("lang/fr.php");
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?= $tr['title']; ?></title>
+  <title>INVEST</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
@@ -35,10 +35,10 @@ $tr = include("lang/fr.php");
 
       <!-- Contact Info -->
      <div class="bg-white p-6 rounded-lg shadow <?php echo ($tr == 'ar') ? 'text-right' : 'text-left'; ?>">
-        <h3 class="text-xl font-semibold text-blue-700 mb-2"><?= $tr['contact_info']; ?></h3>
-        <p class="text-gray-700 mb-1"><?= $tr['address']; ?></p>
-        <p class="text-gray-700 mb-1"><?= $tr['email']; ?></p>
-        <p class="text-gray-700"><?= $tr['phone']; ?></p>
+        <h3 class="text-xl font-semibold text-blue-700 mb-2 <?= $lang === 'ar' ? 'text-right' : '' ?>" ><?= $tr['contact_info']; ?></h3>
+        <p class="text-gray-700 mb-1 <?= $lang === 'ar' ? 'text-right' : '' ?>""><?= $tr['address']; ?></p>
+        <p class="text-gray-700 mb-1 <?= $lang === 'ar' ? 'text-right' : '' ?>""><?= $tr['email']; ?></p>
+        <p class="text-gray-700 <?= $lang === 'ar' ? 'text-right' : '' ?>"><?= $tr['phone']; ?></p>
       </div>
 
 
@@ -58,7 +58,7 @@ $tr = include("lang/fr.php");
     </div>
 
     <!-- Left Section (devient la droite en RTL) -->
-    <div class="md:col-span-3 space-y-6 <?php echo ($tr== 'ar') ? 'text-right' : 'text-left'; ?>">
+    <div class="md:col-span-3 space-y-6 <?= $lang === 'ar' ? 'text-right' : '' ?>">
       <h2 class="text-3xl font-bold text-blue-800 mb-16"><?= $tr['contact_us']; ?></h2>
       <p class="text-gray-700 mb-6" style="margin-bottom: 5rem !important;">
         <?= $tr['contact_description']; ?>

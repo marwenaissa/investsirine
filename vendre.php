@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title><?= $tr['title'] ?></title>
+  <title>INVEST</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -101,9 +101,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl font-semibold text-center mb-10"><?= $tr['faq'] ?></h2>
       <ul class="space-y-4">
-        <li><strong><?= $tr['document_preparation'] ?></strong> <?= $tr['documents_needed'] ?></li>
-        <li><strong><?= $tr['average_sale_time'] ?></strong> <?= $tr['sale_duration'] ?></li>
-        <li><strong><?= $tr['how_is_estimation_calculated'] ?></strong> <?= $tr['calculation_criteria'] ?></li>
+        <li class="<?= $lang === 'ar' ? 'text-right' : '' ?>"><strong><?= $tr['document_preparation'] ?></strong> <?= $tr['documents_needed'] ?></li>
+        <li class="<?= $lang === 'ar' ? 'text-right' : '' ?>"><strong><?= $tr['average_sale_time'] ?></strong> <?= $tr['sale_duration'] ?></li>
+        <li class="<?= $lang === 'ar' ? 'text-right' : '' ?>"><strong><?= $tr['how_is_estimation_calculated'] ?></strong> <?= $tr['calculation_criteria'] ?></li>
       </ul>
     </div>
   </section>
@@ -111,13 +111,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   <!-- Contact -->
   <section id="contact" class="py-12 bg-white">
     <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-semibold text-center mb-8"><?= $tr['contact_us'] ?></h2>
+      <h2 class="text-3xl font-semibold text-center mb-8 <?= $lang === 'ar' ? 'text-right' : '' ?>""><?= $tr['contact_us'] ?></h2>
       
       <form class="grid gap-6" method="POST" action="vendre.php">
-        <input type="text" name="nom" placeholder="<?= $tr['full_name'] ?>" class="border p-3 rounded" required>
-        <input type="tel" name="tel" placeholder="<?= $tr['phone'] ?>" class="border p-3 rounded" required>
-        <input type="text" name="type" placeholder="<?= $tr['property_type'] ?>" class="border p-3 rounded" required>
-        <input type="text" name="localisation" placeholder="<?= $tr['location'] ?>" class="border p-3 rounded" required>
+        <input type="text" name="nom" placeholder="<?= $tr['full_name'] ?>" class="border p-3 rounded <?= $lang === 'ar' ? 'text-right' : '' ?>"" required>
+        <input type="tel" name="tel" placeholder="<?= $tr['phone'] ?>" class="border p-3 rounded <?= $lang === 'ar' ? 'text-right' : '' ?>"" required>
+        <input type="text" name="type" placeholder="<?= $tr['property_type'] ?>" class="border p-3 rounded <?= $lang === 'ar' ? 'text-right' : '' ?>"" required>
+        <input type="text" name="localisation" placeholder="<?= $tr['location'] ?>" class="border p-3 rounded <?= $lang === 'ar' ? 'text-right' : '' ?>"" required>
         
         <button type="submit" class="bg-[#e51820] text-white py-3 px-6 rounded-full hover:bg-[#c4131b] transition">
           <?= $tr['send'] ?>
