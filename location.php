@@ -1,3 +1,25 @@
+<?php
+// Récupération des filtres depuis l'URL
+$villeFiltre = isset($_GET['ville']) ? $_GET['ville'] : '';
+$typeFiltre = isset($_GET['type']) ? $_GET['type'] : '';
+$piecesFiltre = isset($_GET['pieces']) ? $_GET['pieces'] : '';
+
+// Exemple de données des villas (normalement ça viendrait d'une base de données)
+include 'data.php';
+
+
+// Filtrage des villas selon les critères
+$filteredVillas = array_filter($villas, function($villa) use ($villeFiltre, $typeFiltre, $piecesFiltre) {
+    if ($villa['transaction'] !== 'location') {
+        return false;
+    }
+    $matchVille = ($villeFiltre === '' || $villa['ville'] === $villeFiltre);
+    $matchType = ($typeFiltre === '' || $villa['type'] === $typeFiltre);
+    $matchPieces = ($piecesFiltre === '' || ($piecesFiltre === 'plus' ? $villa['pieces'] > 5 : $villa['pieces'] == $piecesFiltre));
+    return $matchVille && $matchType && $matchPieces;
+});
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -19,62 +41,65 @@
 <body class="bg-gray-50 text-gray-800">
 
   <!-- Header -->
-  <!-- Header -->
   <?php include('header.php'); ?>
-  
-   <!-- Section de filtre -->
+
+  <!-- Section de filtre -->
   <?php include('filtre.php'); ?>
 
-
-<!-- Section des villas -->
-<section class="max-w-5xl mx-auto my-12 space-y-8">
-  <!-- Villa 1 -->
-  <div class="flex bg-white shadow-lg overflow-hidden">
-    <!-- Image (60%) -->
-    <div class="w-3/5 h-full">
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c"
-           alt="Villa 1"
-           class="w-full h-full object-cover rounded-l-lg">
-    </div>
-    <!-- Texte (40%) -->
-    <div class="w-2/5 p-6 justify-between rounded-r-lg">
-      <h2 class="text-2xl font-bold mb-1">Villa moderne à La Marsa</h2>
-      <p class="text-lg text-green-600 font-semibold mb-20">Prix : 1 200 000 TND</p> <!-- Marge augmentée -->
-      <p class="text-sm text-gray-500 mb-1">Type : Villa</p>
-      <p class="text-sm text-gray-500 mb-20">Nombre de pièces : 5</p>
-      <button class="bg-white border-2 border-orange-500 hover:bg-orange-500 hover:text-white text-orange-500 font-semibold py-2 px-4 rounded-lg w-full">
-        Détails
-      </button>
-    </div>
-    
-    
-  </div>
-
-  <!-- Villa 2 -->
-  <div class="flex bg-white shadow-lg overflow-hidden">
-    <div class="w-3/5 h-full">
-      <img src="https://images.unsplash.com/photo-1572120360610-d971b9d7767c"
-           alt="Villa 2"
-           class="w-full h-full object-cover rounded-l-lg">
-    </div>
-    <div class="w-2/5 p-6 justify-between rounded-r-lg">
-      <h2 class="text-2xl font-bold mb-1">Villa avec vue sur mer à Hammamet</h2>
-      <p class="text-lg text-green-600 font-semibold mb-20">Prix : 950 000 TND</p>
-      <p class="text-sm text-gray-500 mb-4">Type : Villa</p>
-      <p class="text-sm text-gray-500 mb-20">Nombre de pièces : 4</p>
-      <button class="bg-white border-2 border-orange-500 hover:bg-orange-500 hover:text-white text-orange-500 font-semibold py-2 px-4 rounded-lg w-full">
-        Détails
-      </button>
+  <!-- Section des villas -->
+ <section class="max-w-5xl mx-auto px-4 sm:px-6 my-8 sm:my-12 space-y-6">
+    <?php if (count($filteredVillas) > 0): ?>
+        <?php foreach ($filteredVillas as $villa): ?>
+            <!-- Carte responsive -->
+            <div class="flex flex-col md:flex-row <?= $lang === 'ar' ? 'md:flex-row-reverse' : '' ?>  bg-white shadow-md rounded-lg overflow-hidden mb-6 hover:shadow-lg transition-shadow duration-300">
+                <!-- Image (100% sur mobile, 60% sur desktop) -->
+                <div class="w-full md:w-3/5 h-48 sm:h-64 lg:h-72">
+                    <img src="<?= $villa['image'] ?>" alt="<?= $villa['nom'] ?>" 
+                         class="w-full h-full object-cover md:rounded-l-lg">
+                </div>
+                
+                <!-- Contenu (100% sur mobile, 40% sur desktop) -->
+                <div class="w-full md:w-2/5 p-4 sm:p-6 flex flex-col">
+                    <h2 class="text-xl sm:text-2xl font-bold mb-2"><?= $villa['nom'] ?></h2>
+                    <p class="text-lg text-green-600 font-semibold mb-4 sm:mb-6">
+                        <?= $tr['price'] ?> : <?= number_format($villa['prix'], 0, ',', ' ') ?> 
+                    </p>
+                    
+                    <div class="space-y-2 mb-4 sm:mb-6" <?= $lang === 'ar' ? 'dir="rtl"' : '' ?>>
+                        <p class="text-sm sm:text-base text-gray-600 <?= $lang === 'ar' ? 'text-right' : '' ?>">
+                            <span class="font-medium"><?= $tr['type'] ?> :</span> <?= ucfirst($villa['type']) ?>
+                        </p>
+                        <p class="text-sm sm:text-base text-gray-600 <?= $lang === 'ar' ? 'text-right' : '' ?>">
+                            <span class="font-medium"><?= $tr['rooms'] ?> :</span> <?= $villa['pieces'] ?>
+                        </p>
+                        <p class="text-sm sm:text-base text-gray-600 <?= $lang === 'ar' ? 'text-right' : '' ?>">
+                            <span class="font-medium"><?= $tr['city'] ?> :</span> <?= $villa['ville'] ?>
+                        </p>
+                    </div>
+                    
+                    <a href="details.php?id=<?= $villa['id'] ?>&lang=<?= $lang ?>" class="mt-auto bg-white border-2 border-orange-500 hover:bg-orange-500 
+                                hover:text-white text-orange-500 font-semibold py-2 px-4 rounded-lg 
+                                w-full transition duration-300 text-center">
+                        Détails
+                    </a>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <div class="flex justify-center items-center py-10 sm:py-16">
+          <p class="text-center text-lg sm:text-xl text-gray-500">
+              <?= $tr['no_villas'] ?>
+          </p>
       </div>
-  </div>
+
+
+
+        </div>
+    <?php endif; ?>
 </section>
-
-
-
 
   <!-- Footer -->
   <?php include('footer.php'); ?>
-
 
 </body>
 </html>

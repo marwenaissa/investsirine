@@ -1,32 +1,25 @@
 <?php
+// Langue par défaut
+$lang = 'fr';
+if (isset($_GET['lang']) && in_array($_GET['lang'], ['fr', 'en', 'ar'])) {
+    $lang = $_GET['lang'];
+}
+$tr = include __DIR__ . "/lang/$lang.php";
+
 // Récupération des filtres depuis l'URL
 $villeFiltre = isset($_GET['ville']) ? $_GET['ville'] : '';
 $typeFiltre = isset($_GET['type']) ? $_GET['type'] : '';
 $piecesFiltre = isset($_GET['pieces']) ? $_GET['pieces'] : '';
 
 // Exemple de données des villas (normalement ça viendrait d'une base de données)
-$villas = [
-    [
-        'nom' => 'Villa moderne à La Marsa',
-        'prix' => 1200000,
-        'ville' => 'La Marsa',
-        'type' => 'villa',
-        'pieces' => 5,
-        'image' => 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c'
-    ],
-    [
-        'nom' => 'Villa avec vue sur mer à Hammamet',
-        'prix' => 950000,
-        'ville' => 'Hammamet',
-        'type' => 'villa',
-        'pieces' => 4,
-        'image' => 'https://images.unsplash.com/photo-1572120360610-d971b9d7767c'
-    ],
-    // Ajoute d'autres villas ici selon tes besoins
-];
+include 'data.php';
+
 
 // Filtrage des villas selon les critères
 $filteredVillas = array_filter($villas, function($villa) use ($villeFiltre, $typeFiltre, $piecesFiltre) {
+    if ($villa['transaction'] !== 'vente') {
+        return false;
+    }
     $matchVille = ($villeFiltre === '' || $villa['ville'] === $villeFiltre);
     $matchType = ($typeFiltre === '' || $villa['type'] === $typeFiltre);
     $matchPieces = ($piecesFiltre === '' || ($piecesFiltre === 'plus' ? $villa['pieces'] > 5 : $villa['pieces'] == $piecesFiltre));
@@ -35,11 +28,12 @@ $filteredVillas = array_filter($villas, function($villa) use ($villeFiltre, $typ
 ?>
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="<?= $lang ?>">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vendre un bien immobilier en Tunisie | INVEST</title>
+  <title><?= $tr['title'] ?></title>
+  <meta name="description" content="<?= $tr['description'] ?>">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
@@ -57,35 +51,51 @@ $filteredVillas = array_filter($villas, function($villa) use ($villeFiltre, $typ
   <!-- Header -->
   <?php include('header.php'); ?>
 
-
-  <!-- Section de filtre -->
+  <!-- Section des filtres -->
   <?php include('filtre.php'); ?>
 
-
   <!-- Section des villas -->
-  <section class="max-w-5xl mx-auto my-12 space-y-8">
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 my-8 sm:my-12 space-y-6">
     <?php if (count($filteredVillas) > 0): ?>
-      <?php foreach ($filteredVillas as $villa): ?>
-        <div class="flex bg-white shadow-lg overflow-hidden mb-6">
-          <!-- Image (60%) -->
-          <div class="w-3/5 h-full">
-            <img src="<?= $villa['image'] ?>" alt="<?= $villa['nom'] ?>" class="w-full h-full object-cover rounded-l-lg">
-          </div>
-          <!-- Texte (40%) -->
-          <div class="w-2/5 p-6 justify-between rounded-r-lg">
-            <h2 class="text-2xl font-bold mb-1"><?= $villa['nom'] ?></h2>
-            <p class="text-lg text-green-600 font-semibold mb-20">Prix : <?= number_format($villa['prix'], 0, ',', ' ') ?> TND</p>
-            <p class="text-sm text-gray-500 mb-1">Type : <?= ucfirst($villa['type']) ?></p>
-            <p class="text-sm text-gray-500 mb-20">Nombre de pièces : <?= $villa['pieces'] ?></p>
-            <button class="bg-white border-2 border-orange-500 hover:bg-orange-500 hover:text-white text-orange-500 font-semibold py-2 px-4 rounded-lg w-full relative bottom-5">
-              Détails
-            </button>
-          </div>
-        </div>
-      <?php endforeach; ?>
+        <?php foreach ($filteredVillas as $villa): ?>
+            <div class="flex flex-col md:flex-row <?= $lang === 'ar' ? 'md:flex-row-reverse' : '' ?>  bg-white shadow-md rounded-lg overflow-hidden mb-6 hover:shadow-lg transition-shadow duration-300">
+                <div class="w-full md:w-3/5 h-48 sm:h-64 lg:h-72">
+                    <img src="<?= $villa['image'] ?>" alt="<?= $villa['nom'] ?>" 
+                         class="w-full h-full object-cover md:rounded-l-lg">
+                </div>
+                <div class="w-full md:w-2/5 p-4 sm:p-6 flex flex-col">
+                    <h2 class="text-xl sm:text-2xl font-bold mb-2"><?= $villa['nom'] ?></h2>
+                    <p class="text-lg text-green-600 font-semibold mb-4 sm:mb-6">
+                        <?= $tr['price'] ?> : <?= number_format($villa['prix'], 0, ',', ' ') ?> 
+                    </p>
+                    <div class="space-y-2 mb-4 sm:mb-6" <?= $lang === 'ar' ? 'dir="rtl"' : '' ?>>
+                        <p class="text-sm sm:text-base text-gray-600 <?= $lang === 'ar' ? 'text-right' : '' ?>">
+                            <span class="font-medium"><?= $tr['type'] ?> :</span> <?= ucfirst($villa['type']) ?>
+                        </p>
+                        <p class="text-sm sm:text-base text-gray-600 <?= $lang === 'ar' ? 'text-right' : '' ?>">
+                            <span class="font-medium"><?= $tr['rooms'] ?> :</span> <?= $villa['pieces'] ?>
+                        </p>
+                        <p class="text-sm sm:text-base text-gray-600 <?= $lang === 'ar' ? 'text-right' : '' ?>">
+                            <span class="font-medium"><?= $tr['city'] ?> :</span> <?= $villa['ville'] ?>
+                        </p>
+                    </div>
+
+                    <a href="details.php?id=<?= $villa['id'] ?>&lang=<?= $lang ?>" class="mt-auto bg-white border-2 border-orange-500 hover:bg-orange-500 
+                        hover:text-white text-orange-500 font-semibold py-2 px-4 rounded-lg 
+                        w-full transition duration-300 text-center">
+                        <?= $tr['details'] ?>
+                    </a>
+                </div>
+            </div>
+        <?php endforeach; ?>
     <?php else: ?>
-      <p class="text-center text-lg text-gray-500" style="margin-top: 7rem !important;margin-bottom: 7rem !important;" >Aucune villa ne correspond à vos critères de recherche.</p>
-      <?php endif; ?>
+        <div class="flex justify-center items-center py-10 sm:py-16">
+          <p class="text-center text-lg sm:text-xl text-gray-500">
+              <?= $tr['no_villas'] ?>
+          </p>
+      </div>
+
+    <?php endif; ?>
   </section>
 
   <!-- Footer -->

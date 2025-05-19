@@ -43,7 +43,11 @@ else
 
 <body>
 
-    
+    <?php
+        include("classes.php");
+        $res1 = Estimation::lister();
+
+    ?>
 
     <!-- Left Panel -->
 
@@ -200,110 +204,71 @@ else
 
         <br>
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
+
         <br>
         <div class="content mt-3">
 
         
 
 
-            <div class="col-sm-6 col-lg-4">
-                <div class="card text-white bg-flat-color-1">
-                    <div class="card-body pb-0">
-                        <div class="dropdown float-right">
-                            <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton1" data-toggle="dropdown">
-                                <i class="fa fa-cog"></i>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                <div class="dropdown-menu-content">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card text-white bg-flat-color-1">
+                        <div class="card-body pb-0">
+                            <div class="text-light text-sm mb-2">
+                                <i class="ti-comment-alt" style="font-size: 24px;"></i> Estimations
                             </div>
+                            <h4 class="mb-0">
+                                    Nombre totale d'estimations :<?php include("nombre_estimation.php"); ?>
+                            </h4>
+                            <p class="text-light">
+                                Non lues :
+                                <strong>
+                                    <?php include("nombre_estimation_non_lue.php"); ?>
+                                </strong>
+                            </p>
                         </div>
-                        <h4 class="mb-0">
-                            <span class="count">
-                                <?php
-                                include("nombre_contact.php");
-                                ?>
-                            </span>
-                        </h4>
-                        <p class="text-light">Contact</p>
-
-                        <div class="chart-wrapper px-0" style="height:70px;" height="70">
-                            <canvas id="widgetChart1"></canvas>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-            <!--/.col-->
-
-            <div class="col-sm-6 col-lg-4">
-                <div class="card text-white bg-flat-color-2">
-                    <div class="card-body pb-0">
-                        <div class="dropdown float-right">
-                            <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton2" data-toggle="dropdown">
-                                <i class="fa fa-cog"></i>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                <div class="dropdown-menu-content">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
-                            </div>
-                        </div>
-                        <h4 class="mb-0">
-                            <span class="count">
-                                <?php
-                                include("nombre_contact.php");
-                                ?>
-                            </span>
-                        </h4>
-                        <p class="text-light">Contact</p>
-
-                        <div class="chart-wrapper px-0" style="height:70px;" height="70">
-                            <canvas id="widgetChart2"></canvas>
-                        </div>
-
                     </div>
                 </div>
-            </div>
-            <!--/.col-->
+                <!--/.col-->
+
+                <div class="col-sm-6 col-lg-4">
+                    <div class="card text-white bg-flat-color-2">
+                        <div class="card-body pb-0">
+                            <div class="text-light text-sm mb-2">
+                                <i class="ti-email" style="font-size: 24px;"></i> Contacts
+                            </div>
+                            <h4 class="mb-0">
+                                
+                                Nombre totale de contacts : <?php include("nombre_contact.php"); ?>
+                            
+                            </h4>
+                            <p class="text-light">
+                                Non lus :
+                                <strong>
+                                    <?php include("nombre_contact_non_lue.php"); ?>
+                                </strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
             <div class="col-sm-6 col-lg-4">
                 <div class="card text-white bg-flat-color-3">
                     <div class="card-body pb-0">
-                        <div class="dropdown float-right">
-                            <button class="btn bg-transparent dropdown-toggle theme-toggle text-light" type="button" id="dropdownMenuButton3" data-toggle="dropdown">
-                                <i class="fa fa-cog"></i>
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton3">
-                                <div class="dropdown-menu-content">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
-                            </div>
+                       
+                        <div class="text-light text-sm mb-2">
+                            <i class="ti-user" style="font-size: 24px;"></i> Contacts
                         </div>
+
                         <h4 class="mb-0">
-                            <span class="count">
-                                <?php
+                                    Nombre totale de administrateur :          
+                               <?php
                                 include("nombre_administrateur.php");
                                 ?>
-                            </span>
+                           
                         </h4>
-                        <p class="text-light">Administrateur</p>
+                        <p class="text-light">.</p>
 
-                        <div class="chart-wrapper px-0" style="height:70px;" height="70">
-                            <canvas id="widgetChart3"></canvas>
-                        </div>
                     </div>
                    
                 </div>
@@ -325,7 +290,61 @@ else
 
 
         </div> <!-- .content -->
+
+
+        <div class="content mt-3">
+    <!-- Bloc Estimations -->
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-flat-color-1 text-white">
+                <strong><i class="ti-comment-alt"></i> 3 dernières estimations</strong>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Dupont Jean <span class="badge badge-primary badge-pill">Appartement - Paris</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Martin Claire <span class="badge badge-primary badge-pill">Maison - Lyon</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Bernard Paul <span class="badge badge-primary badge-pill">Studio - Marseille</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bloc Contacts -->
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header bg-flat-color-2 text-white">
+                <strong><i class="ti-email"></i> 3 derniers contacts</strong>
+            </div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Leblanc Marie <span class="badge badge-info badge-pill">m.leblanc@mail.com</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Petit Julien <span class="badge badge-info badge-pill">j.petit@mail.com</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Durand Alice <span class="badge badge-info badge-pill">a.durand@mail.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
     </div><!-- /#right-panel -->
+
+
+
+
+    
 
     <!-- Right Panel -->
 

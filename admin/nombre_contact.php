@@ -8,8 +8,8 @@ $cnx= Connexion::getInstance()->getConnexion();
 
 if($cnx)
 { 
-    $sql="SELECT COUNT(*) FROM produit";
-    $resultat=$cnx->query($sql);
+    $sql="SELECT COUNT(*) FROM contact";
+  $resultat=$cnx->query($sql);
     echo $resultat->fetchColumn();
 }
 

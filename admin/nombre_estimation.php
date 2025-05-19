@@ -8,9 +8,9 @@ $cnx= Connexion::getInstance()->getConnexion();
 
 if($cnx)
 { 
-    $sql="SELECT COUNT(*) FROM famille";
-    $resultat=$cnx->query($sql);
-    echo $resultat->rowCount();
+    $sql="SELECT COUNT(*) FROM estimation";
+     $resultat=$cnx->query($sql);
+    echo $resultat->fetchColumn();
 }
 
 ?>

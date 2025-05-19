@@ -87,6 +87,38 @@ class Estimation {
         }
         return $tab;
     }
+
+
+    // Compte le nombre total d'estimations
+    public static function compterTotal() {
+        $cnx = Connexion::getInstance()->getConnexion();
+        if ($cnx) {
+            $sql = "SELECT COUNT(*) as total FROM estimation";
+            $resultat = $cnx->query($sql);
+            if ($resultat) {
+                $row = $resultat->fetch(PDO::FETCH_ASSOC);
+                return intval($row['total']);
+            }
+        }
+        return 0;
+    }
+
+    // Compte le nombre d'estimations non lues
+    public static function compterNonLues() {
+        $cnx = Connexion::getInstance()->getConnexion();
+        if ($cnx) {
+            $sql = "SELECT COUNT(*) as non_lues FROM estimation WHERE lue = 0";
+            $resultat = $cnx->query($sql);
+            if ($resultat) {
+                $row = $resultat->fetch(PDO::FETCH_ASSOC);
+                return intval($row['non_lues']);
+            }
+        }
+        return 0;
+    }
+
+
+
 }
 
 
