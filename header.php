@@ -16,7 +16,7 @@ $tr = include __DIR__ . "/lang/$lang.php";
     <!-- Logo + Hamburger -->
     <div class="flex items-center justify-between w-full md:w-auto <?= $lang === 'ar' ? 'flex-row-reverse' : '' ?>">
       <a href="index.php?lang=<?= $lang ?>">
-        <img src="Logo.png" alt="Logo INVEST" class="h-24 md:h-32 object-contain" />
+        <img src="Logo.png" alt="Logo INVEST" class="h-32 md:h-40 object-contain" />
       </a>
 
       <!-- Hamburger -->
