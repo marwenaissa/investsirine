@@ -306,7 +306,7 @@ else
                     if (!empty($res1)) {
                         foreach ($res1 as $estimation) {
                             $nom = htmlspecialchars($estimation['nom']);
-                            $type = htmlspecialchars($estimation['type']);
+                            $type = htmlspecialchars($estimation['tel']);
                             $localisation = htmlspecialchars($estimation['localisation']);
 
                             echo '<li class="list-group-item d-flex justify-content-between align-items-center">';
