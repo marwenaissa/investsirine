@@ -101,6 +101,12 @@ return [
 'local_commercial_au_lac_2' => 'Local commercial au Lac 2',
 'adresse_invest' => '12 Investment Street, Paris',
 'tel' => 'Phone : +216 123 456',
+'Caractéristiques' => 'Characteristics',
+'Description_details' => 'Description',
+'Propriétaire' => 'Owner',
+"Rez de jardin S+3 au Golden Tulip" => "Rez de jardin S+3 au Golden Tulip",
+"Duplex S+2 vue mer à Gammarth" => "Duplex S+2 vue mer à Gammarth",
+"Duplex meublé avec vue mer au Golden Tulip" => "Duplex meublé avec vue mer au Golden Tulip",
 
 
 ];

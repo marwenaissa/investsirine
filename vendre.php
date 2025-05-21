@@ -87,14 +87,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </div>
   </section>
 
-  <!-- Témoignages -->
-  <section class="py-12 bg-white">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-semibold mb-8"><?= $tr['client_testimonials'] ?></h2>
-      <blockquote class="italic">"<?= $tr['testimonial'] ?>"</blockquote>
-      <p class="mt-2">— <?= $tr['customer_name'] ?></p>
-    </div>
-  </section>
+ <!-- Témoignages -->
+<!-- Témoignages -->
+<!-- Témoignages -->
+<div class="rounded-lg overflow-hidden shadow-lg mx-auto w-full max-w-lg">
+  <video class="w-full h-auto" 
+         controls 
+         autoplay 
+         muted 
+         loop 
+         playsinline>
+    <source src="VID-20250521-WA0000.mp4" type="video/mp4">
+    Votre navigateur ne prend pas en charge la lecture vidéo.
+  </video>
+</div>
+
 
   <!-- FAQ -->
   <section class="bg-gray-100 py-12">

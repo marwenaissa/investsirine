@@ -110,6 +110,14 @@ return [
 'local_commercial_au_lac_2' => 'Local commercial au Lac 2',
 'adresse_invest' => '12 Rue de l\'Investissement, Paris',
 'tel' => 'Tél : +216 123 456',
-
+'Caractéristiques' => 'Caractéristiques',
+'Description_details' => 'Description',
+'Propriétaire' => 'Propriétaire',
+"Superbe Duplex S+3 Meublé avec Vue Mer - Golden Tulip Gammarth" => "Superbe Duplex S+3 Meublé avec Vue Mer - Golden Tulip Gammarth",
+"Triplex s+4 vues sur mer au Golden Tulip" => "Triplex s+4 vues sur mer au Golden Tulip",
+"Rez de jardin S+3 au Golden Tulip" => "Rez de jardin S+3 au Golden Tulip",
+"Duplex S+2 vue mer à Gammarth" => "Duplex S+2 vue mer à Gammarth",
+"Duplex meublé avec vue mer au Golden Tulip" => "Duplex meublé avec vue mer au Golden Tulip",
+"Duplex vue mer avec piscine au Golden Tulip" => "Duplex vue mer avec piscine au Golden Tulip",
 ];
 

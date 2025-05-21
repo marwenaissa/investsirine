@@ -14,16 +14,17 @@ $tr = include __DIR__ . "/lang/$lang.php";
   <div class="container mx-auto px-4 py-4 flex items-center justify-between flex-wrap <?= $lang === 'ar' ? 'flex-row-reverse' : '' ?>">
 
     <!-- Logo + Hamburger -->
-    <div class="flex items-center justify-between w-full md:w-auto <?= $lang === 'ar' ? 'flex-row-reverse' : '' ?>">
-      <a href="index.php?lang=<?= $lang ?>">
-        <img src="Logo.png" alt="Logo INVEST" class="h-32 md:h-40 object-contain" />
-      </a>
+   <div class="flex items-center justify-between w-full md:w-auto <?= $lang === 'ar' ? 'flex-row-reverse' : '' ?>">
+  <a href="index.php?lang=<?= $lang ?>">
+    <img src="Logo.png" alt="Logo INVEST" class="h-40 md:h-52 object-contain" />
+  </a>
 
-      <!-- Hamburger -->
-      <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
-        <i class="fas fa-bars text-2xl"></i>
-      </button>
-    </div>
+  <!-- Hamburger -->
+  <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
+    <i class="fas fa-bars text-2xl"></i>
+  </button>
+</div>
+
 
     <div>
 

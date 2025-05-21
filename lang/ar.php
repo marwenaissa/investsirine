@@ -101,6 +101,12 @@ return [
 'local_commercial_au_lac_2' => 'محل تجاري في البحيرة 2',
 'adresse_invest' => '12 شارع الاستثمار، باريس',
 'tel' => '+الهاتف: 216 123 456', 
-
+'Caractéristiques' => 'الخصائص', 
+'Description_details' => 'الوصف',
+'Propriétaire' => 'لمالك',
+"Triplex s+4 vues sur mer au Golden Tulip" => "Triplex s+4 vues sur mer au Golden Tulip",
+"Rez de jardin S+3 au Golden Tulip" => "Rez de jardin S+3 au Golden Tulip",
+"Duplex S+2 vue mer à Gammarth" => "Duplex S+2 vue mer à Gammarth",
+"Duplex meublé avec vue mer au Golden Tulip" => "Duplex meublé avec vue mer au Golden Tulip",
 
 ];

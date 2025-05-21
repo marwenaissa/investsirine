@@ -39,15 +39,26 @@ foreach ($villas as $villa) {
       <img src="<?= $villaChoisie['image'] ?>" alt="<?= $villaChoisie['nom']?>"  class="w-full h-full object-cover">
     </div>
 
+
+    
     <!-- Titre -->
-    <h1 class="text-3xl font-bold text-blue-800 mb-2"><?= $villaChoisie['nom'] ?></h1>
+      <h1 class="text-3xl font-bold text-blue-800 mb-2 <?= ($lang == 'ar') ? 'text-right' : 'text-left' ?>">
+
+      <?= $tr[$villaChoisie['nom']] ?>
+    </h1>
 
     <!-- Prix & Propriétaire -->
    <!-- Prix & Propriétaire alignés à gauche -->
-<div class="mb-8 space-y-2">
-  <p class="text-xl text-green-600 font-semibold"><?= number_format($villaChoisie['prix'], 0, ',', ' ') ?> TND</p>
-  <p class="text-gray-700">Propriétaire : <span class="font-medium">Jean Dupont</span></p>
-</div>
+    <div class="mb-8 space-y-2 <?= ($lang == 'ar') ? 'text-right' : 'text-left' ?>">
+      <p class="text-xl text-green-600 font-semibold"><?= number_format($villaChoisie['prix'], 0, ',', ' ') ?> TND</p>
+        <p class="text-gray-700">
+            <?php if ($lang === 'ar'): ?>
+                <span class="font-medium">Jean Dupont</span> : <?= $tr['Propriétaire'] ?>
+            <?php else: ?>
+                <?= $tr['Propriétaire'] ?> : <span class="font-medium">Jean Dupont</span>
+            <?php endif; ?>
+        </p>
+    </div>
 
 
     <!-- Galerie de 6 images -->
@@ -71,7 +82,7 @@ foreach ($villas as $villa) {
 
       <!-- Description -->
       <div>
-        <h2 class="text-2xl font-semibold text-blue-700 mb-3">Description</h2>
+        <h2 class="text-2xl font-semibold text-blue-700 mb-3"><?= $tr['Description_details'] ?> </h2>
         <p class="text-gray-700 leading-relaxed">
           <?= $villaChoisie['description'] ?>
         </p>
@@ -79,27 +90,30 @@ foreach ($villas as $villa) {
 
       <!-- Caractéristiques -->
       <div>
-        <h2 class="text-2xl font-semibold text-blue-700 mb-3">Caractéristiques</h2>
+        <h2 class="text-2xl font-semibold text-blue-700 mb-3"><?= $tr['Caractéristiques'] ?></h2>
         <ul class="text-gray-700 list-disc list-inside space-y-2">
-            <?php foreach ($villaChoisie['caracteristiques'] as $key => $value): ?>
-                <?php if (!empty($value)): ?>
-                    <li>
-                        <?php 
-                        // Formatage de la clé en un texte lisible
-                        $label = ucfirst(str_replace('_', ' ', $key)); 
-                        
-                        // Affichage pour "Garage", "Piscine" ou autres booléens
-                        if (is_bool($value)) {
-                            echo $label . " : " . ($value ? "Oui" : "Non");
-                        } else {
-                            echo $label . " : " .   ($value);
-                        }
-                        ?>
-                    </li>
-                <?php endif; ?>
-            <?php endforeach; ?>
+          <?php foreach ($villaChoisie['caracteristiques'] as $key => $value): ?>
+              <li>
+                  <?php
+                  // Si la clé est numérique, c'est une entrée sans valeur : on affiche la valeur comme label
+                  if (is_int($key)) {
+                      $label = ucfirst(str_replace('_', ' ', $value));
+                      echo $label;
+                  } else {
+                      // Sinon, clé => valeur
+                      $label = ucfirst(str_replace('_', ' ', $key));
+                      if (is_bool($value)) {
+                          echo $label . ' : ' . ($value ? 'Oui' : 'Non');
+                      } else {
+                          echo $label . ' : ' . $value;
+                      }
+                  }
+                  ?>
+              </li>
+          <?php endforeach; ?>
         </ul>
-    </div>
+      </div>
+
 
 
     </div>

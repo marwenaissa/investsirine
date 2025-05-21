@@ -43,15 +43,19 @@ $tr = include("lang/fr.php");
 
 
       <!-- Video -->
-      <div class="rounded-lg overflow-hidden shadow-lg">
-        <iframe class="w-full h-64 md:h-80" 
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                title="<?= $tr['video_title']; ?>" 
-                frameborder="0" 
-                allowfullscreen
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
-        </iframe>
-      </div>
+    <div class="rounded-lg overflow-hidden shadow-lg mx-auto w-full max-w-3xl">
+  <video class="w-full h-auto"
+         controls
+         autoplay
+         muted
+         loop
+         playsinline>
+    <source src="VID-20250519-WA0012.mp4" type="video/mp4">
+    Votre navigateur ne prend pas en charge la lecture vidéo.
+  </video>
+</div>
+
+
 
       <!-- Empty space for extension -->
       <div class="mt-8 h-32 bg-gray-100 rounded-lg"></div>
