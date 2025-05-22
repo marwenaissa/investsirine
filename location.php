@@ -62,7 +62,7 @@ $filteredVillas = array_filter($villas, function($villa) use ($villeFiltre, $typ
                 <div class="w-full md:w-2/5 p-4 sm:p-6 flex flex-col">
                     <h2 class="text-xl sm:text-2xl font-bold mb-2 <?= $lang === 'ar' ? 'text-right' : '' ?>"><?= $tr[$villa['nom']] ?? $villa['nom'] ?></h2>
                     <p class="text-lg text-green-600 font-semibold mb-4 sm:mb-6 <?= $lang === 'ar' ? 'text-right' : '' ?>">
-                        <?= $tr['price'] ?> : <?= number_format($villa['prix'], 0, ',', ' ') ?> 
+                        <?= number_format($villa['prix'], 0, ',', ' ') ?> TND 
                     </p>
                     
                     <div class="space-y-2 mb-4 sm:mb-6" <?= $lang === 'ar' ? 'dir="rtl"' : '' ?>>

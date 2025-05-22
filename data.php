@@ -8,7 +8,7 @@ $villas = [
         'prix' => 4200000,
         'ville' => 'Lac 2',
         'type' => 'Locaux commerciaux',
-        'pieces' => 5,
+        'pieces' => 4,
         'description' => "À louer un local commercial d’une superficie de 80 m2 avec mezzanine 19 m2 situé au Lac 2.
         Fonds de commerce : 420.000 DT",
         'transaction' => 'vente',

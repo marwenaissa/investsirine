@@ -10,21 +10,20 @@ if (isset($_GET['lang']) && in_array($_GET['lang'], ['fr', 'en', 'ar'])) {
 $tr = include __DIR__ . "/lang/$lang.php";
 ?>
 
-<header class="relative bg-white shadow-md rounded-b-2xl">
+<header class="fixed top-0 left-0 w-full z-50 bg-white shadow-md rounded-b-2xl">
   <div class="container mx-auto px-4 py-4 flex items-center justify-between flex-wrap <?= $lang === 'ar' ? 'flex-row-reverse' : '' ?>">
-
+  
     <!-- Logo + Hamburger -->
-   <div class="flex items-center justify-between w-full md:w-auto <?= $lang === 'ar' ? 'flex-row-reverse' : '' ?>">
-  <a href="index.php?lang=<?= $lang ?>">
-    <img src="Logo.png" alt="Logo INVEST" class="h-40 md:h-52 object-contain" />
-  </a>
+    <div class="flex items-center justify-between w-full md:w-auto <?= $lang === 'ar' ? 'flex-row-reverse' : '' ?>">
+    <a href="index.php?lang=<?= $lang ?>">
+  <img src="Logo.png" alt="Logo INVEST" class="h-20 md:h-24 object-contain" />
+</a>
 
-  <!-- Hamburger -->
-  <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
-    <i class="fas fa-bars text-2xl"></i>
-  </button>
-</div>
-
+      <!-- Hamburger -->
+      <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
 
     <div>
 

@@ -108,5 +108,8 @@ return [
 "Rez de jardin S+3 au Golden Tulip" => "Rez de jardin S+3 au Golden Tulip",
 "Duplex S+2 vue mer à Gammarth" => "Duplex S+2 vue mer à Gammarth",
 "Duplex meublé avec vue mer au Golden Tulip" => "Duplex meublé avec vue mer au Golden Tulip",
+"Locaux commerciaux" => "محلات تجارية",
+"Lac 2" => "ضفاف البحيرة 2",
+"Superbe Duplex S+3 Meublé avec Vue Mer - Golden Tulip Gammarth" => "دوبلكس مفروش فاخر صالون و4 غرف مع إطلالة على البحر – جولدن توليب قمرت",
 
 ];

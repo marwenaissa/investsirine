@@ -107,6 +107,11 @@ return [
 "Rez de jardin S+3 au Golden Tulip" => "Rez de jardin S+3 au Golden Tulip",
 "Duplex S+2 vue mer à Gammarth" => "Duplex S+2 vue mer à Gammarth",
 "Duplex meublé avec vue mer au Golden Tulip" => "Duplex meublé avec vue mer au Golden Tulip",
+"Locaux commerciaux" => "Commercial spaces",
+"Lac 2" => "Lac 2",
+"Superbe Duplex S+3 Meublé avec Vue Mer - Golden Tulip Gammarth" => "Beautiful Furnished 3-Bedroom Duplex with Sea View - Golden Tulip Gammarth",
+"Jean Dupont" =>  "Jean Dupont",
+
 
 
 ];

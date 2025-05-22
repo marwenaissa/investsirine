@@ -119,5 +119,9 @@ return [
 "Duplex S+2 vue mer à Gammarth" => "Duplex S+2 vue mer à Gammarth",
 "Duplex meublé avec vue mer au Golden Tulip" => "Duplex meublé avec vue mer au Golden Tulip",
 "Duplex vue mer avec piscine au Golden Tulip" => "Duplex vue mer avec piscine au Golden Tulip",
+"Locaux commerciaux" => "Locaux commerciaux",
+"Lac 2" => "Lac 2",
+"Jean Dupont" =>  "Jean Dupont",
+
 ];
 
