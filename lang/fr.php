@@ -107,7 +107,7 @@ return [
 'ENG' => 'ENG',
 'AR' => 'AR',
 'villa_avec_vue_sur_mer_a_hammamet' => 'Villa avec vue sur mer à Hammamet',
-'local_commercial_au_lac_2' => 'Local commercial au Lac 2',
+'local_commercial_au_lac_2' => 'Commercial space at Lac 2',
 'adresse_invest' => '12 Rue de l\'Investissement, Paris',
 'tel' => 'Tél : +216 123 456',
 'Caractéristiques' => 'Caractéristiques',

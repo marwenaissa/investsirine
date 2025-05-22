@@ -118,5 +118,7 @@ return [
     'chauffage_central' => 'تدفئة مركزية',
     'securite' => 'الأمن',
   ],
+'local_commercial_au_lac_2' => 'محل تجاري في ضفاف البحيرة 2',
+
   
 ];
