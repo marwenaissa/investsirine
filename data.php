@@ -19,7 +19,6 @@ $villas = [
         'image_secondaire_5' => 'images/1/DSC_0277.jpg',
         'image_secondaire_6' => '',
         'caracteristiques' => [
-            'type_bien',
             'climatisation',
             'chauffage_central',
             'securite',
@@ -27,7 +26,7 @@ $villas = [
     ],
     [
         'id' => 2,
-        'nom' => 'Triplex s+4 vues sur mer au Golden Tulip',
+        'nom' => 'Triplex s+4 vue sur mer au Golden Tulip',
         'prix' => 5000,
         'ville' => 'Gammarth',
         'type' => 'villa',
@@ -35,7 +34,7 @@ $villas = [
         'description' => "A louer un luxueux triplex situé dans une résidence très calme et sécurisée au
         Golden Tulip.
         Cette résidence répartie sur trois étages sur une superficie de 330 mètres carrés
-        avec deux terrasses vues sur mer. 
+        avec deux terrasses vue sur mer. 
         Au rez-de-chaussée, un open space avec une cuisine américaine entièrement
         équipée donnant sur deux salons et une salle à manger.
         Dans le premier salon se trouve un écran géant avec Home cinéma. 
@@ -69,7 +68,7 @@ $villas = [
         'nom' => 'Superbe Duplex S+3 Meublé avec Vue Mer - Golden Tulip Gammarth',
         'prix' => 4500,
         'ville' => 'Gammarth',
-        'type' => 'Rez-de-jardin meublé',
+        'type' => 'appartement',
         'pieces' => 4,
         'description' => "Un magnifique duplex S+3,entièrement meublé, d’une superficie de 200 m², avec une vue mer exceptionnelle.
         Idéalement situé à Gammarth, dans une résidence hautement sécurisée et calme,à quelques pas de l’hôtel Golden Tulip
@@ -104,7 +103,7 @@ $villas = [
         'nom' => 'Rez de jardin S+3 au Golden Tulip',
         'prix' => 4000,
         'ville' => 'Gammarth',
-        'type' => 'Rez-de-jardin meublé',
+        'type' => 'appartement',
         'pieces' => 4,
         'description' => "À louer dans une résidence calme et sécurisée le Golden Tulip, un luxueux rez de jardin
         S+3 meublé d'environ 220 m2 donnant sur une belle piscine.
@@ -137,7 +136,7 @@ $villas = [
         'nom' => 'Duplex S+2 vue mer à Gammarth',
         'prix' => 2800,
         'ville' => 'Gammarth',
-        'type' => 'Duplex meublé',
+        'type' => 'appartement',
         'pieces' => 4,
         'description' => "À louer un magnifique duplex S+2, entièrement rénové et meublé d'environ 140 m 2 
         avec une vue imprenable sur la mer et la forêt de Gammarth. 
@@ -158,7 +157,6 @@ $villas = [
         'image_secondaire_6' => '',
         'caracteristiques' => [
             'surface' => '140 m²',
-            'type_bien' => 'Duplex meublé',
             'vue_mer_foret',                    
             'terrasses_panoramiques',          
             'cuisine_equipee',
@@ -172,7 +170,7 @@ $villas = [
         'nom' => 'Duplex meublé avec vue mer au Golden Tulip',
         'prix' => 4500,
         'ville' => 'Gammarth',
-        'type' => 'Duplex meublé',
+        'type' => 'appartement',
         'pieces' => 4,
         'description' => "Duplex vue mer meublé dans un quartier calme et sécurisé avec une grande
         terrasse de 100 m 2 (vue panoramique sur la mer), cuisine entièrement équipée
@@ -192,7 +190,6 @@ $villas = [
         'image_secondaire_6' => '',
         'caracteristiques' => [
             'surface' => '130 m²',
-            'type_bien' => 'Appartement (duplex)',
             'terrasse_panoramique',
             'vue_mer_montagnes',
             'chauffage_central',
@@ -243,39 +240,5 @@ $villas = [
             'cuisine_equipee_machine_a_laver'
         ]
 
-    ],
-    [
-        'id' => 8,
-        'nom' => 'Superbe Duplex S+3 Meublé avec Vue Mer – Golden Tulip Gammarth',
-        'prix' => 4500,
-        'ville' => 'Gammarth',
-        'type' => 'Duplex meublé',
-        'pieces' => 4,
-        'description' => "Un magnifique duplex S+3,entièrement meublé, d’une superficie de 200 m², avec une vue mer exceptionnelle.
-        Idéalement situé à Gammarth, dans une résidence hautement sécurisée et calme,à quelques pas de l’hôtel Golden Tulip
-        Parmi les nombreux avantages de la résidence :
-        Un spa, une salle de sport, un hammam, un sauna, une piscine couverte et une
-        piscine extérieure, deux terrains de tennis, un restaurant français et indien, etc.
-        Composition du bien :
-        Rez-de-chaussée : Salon spacieux et lumineux avec salle à manger ;
-        Cuisine entièrement équipée ;Salle d’eau invités ; Accès à un jardin privé
-        À l’étage : Suite parentale avec dressing, salle de bain et terrasse avec vue mer
-        Deux chambres à coucher avec dressings ;une salle de bain partagée
-        ",
-        'transaction' => 'location',
-        'image' => 'images/8/1.jpg',
-        'image_secondaire_1' => 'images/8/2.jpg',
-        'image_secondaire_2' => 'images/8/583429637.jpg',
-        'image_secondaire_3' => 'images/8/583430047.jpg',
-        'image_secondaire_4' => 'images/8/583430119.jpg',
-        'image_secondaire_5' => 'images/8/583430253.jpg',
-        'image_secondaire_6' => 'images/8/DSC_0069.jpg',
-        'caracteristiques' => [
-            'vue_sur_mer',
-            'chauffage_central',
-            'climatisation',
-            'animaux_autorises',
-            'securite_24h'
-        ]
     ]
 ];
