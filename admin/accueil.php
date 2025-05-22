@@ -308,10 +308,11 @@ else
                             $nom = htmlspecialchars($estimation['nom']);
                             $type = htmlspecialchars($estimation['tel']);
                             $localisation = htmlspecialchars($estimation['localisation']);
-
+                            tel = htmlspecialchars($contact['tel']);
+                            
                             echo '<li class="list-group-item d-flex justify-content-between align-items-center">';
                             echo $nom;
-                            echo ' <span class="badge badge-primary badge-pill">' . $type . ' - ' . $localisation . '</span>';
+                            echo ' <span class="badge badge-primary badge-pill">' . $type . ' - ' . tel . '</span>';
                             echo '</li>';
                         }
                     } else {
@@ -336,9 +337,10 @@ else
                         foreach ($res2 as $contact) {
                             $nom = htmlspecialchars($contact['nom']);
                             $email = htmlspecialchars($contact['email']);
+                            tel = htmlspecialchars($contact['tel']);
 
                             echo '<li class="list-group-item d-flex justify-content-between align-items-center">';
-                            echo $nom . ' <span class="badge badge-info badge-pill">' . $email . '</span>';
+                            echo $nom . ' <span class="badge badge-info badge-pill">' . $email . ' - ' . tel . '</span>';
                             echo '</li>';
                         }
                     } else {
