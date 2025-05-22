@@ -44,6 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 <body class="bg-gray-50 text-gray-800">
 
   <?php include('header.php'); ?>
+  <div style="height: 120px;"></div>
 
   <!-- Hero Section -->
   <section class="bg-[#dbd5d2] py-16 text-center">

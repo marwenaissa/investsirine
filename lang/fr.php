@@ -122,6 +122,15 @@ return [
 "Locaux commerciaux" => "Locaux commerciaux",
 "Lac 2" => "Lac 2",
 "Jean Dupont" =>  "Jean Dupont",
+"descriptionid1" => "À louer un local commercial d’une superficie de 80 m2 avec mezzanine 19 m2 situé au Lac 2.
+Fonds de commerce : 420.000 DT",
+'caracteristiques' => [
+'type_bien' => 'Type de bien',
+'climatisation' => 'Climatisation',
+'chauffage_central' => 'Chauffage central',
+'securite' => 'Sécurité',
+],
+
 
 ];
 

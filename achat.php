@@ -50,6 +50,7 @@ $filteredVillas = array_filter($villas, function($villa) use ($villeFiltre, $typ
 
   <!-- Header -->
   <?php include('header.php'); ?>
+<div style="height: 120px;"></div>
 
   <!-- Section des filtres -->
   <?php include('filtre.php'); ?>

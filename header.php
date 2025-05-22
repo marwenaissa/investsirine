@@ -1,5 +1,8 @@
 <!-- Ajoute Font Awesome dans le <head> si ce n’est pas déjà fait -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<?php
+  $idParam = isset($_GET['id']) ? '&id=' . (int)$_GET['id'] : '';
+?>
 
 <?php
 // Langue par défaut
@@ -15,10 +18,9 @@ $tr = include __DIR__ . "/lang/$lang.php";
   
     <!-- Logo + Hamburger -->
     <div class="flex items-center justify-between w-full md:w-auto <?= $lang === 'ar' ? 'flex-row-reverse' : '' ?>">
-    <a href="index.php?lang=<?= $lang ?>">
+ <a href="index.php?lang=<?= $lang ?>">
   <img src="Logo.png" alt="Logo INVEST" class="h-20 md:h-24 object-contain" />
 </a>
-
       <!-- Hamburger -->
       <button id="menu-toggle" class="md:hidden text-gray-700 focus:outline-none">
         <i class="fas fa-bars text-2xl"></i>
@@ -59,13 +61,15 @@ $tr = include __DIR__ . "/lang/$lang.php";
 
     <!-- Langues + Téléphone -->
     <div class="mt-6 md:mt-0 w-full md:w-auto flex flex-col items-center md:items-end gap-2 <?= $lang === 'ar' ? 'flex-row-reverse' : '' ?>">
+      
       <div class="text-base font-bold text-red-600 flex gap-2">
-        <a href="?lang=fr" class="hover:text-blue-800"><?= $tr['FR'] ?></a>
+        <a href="?lang=fr<?= $idParam ?>" class="hover:text-blue-800"><?= $tr['FR'] ?></a>
         <span class="text-gray-600">|</span>
-        <a href="?lang=ar" class="hover:text-blue-800"><?= $tr['AR'] ?> </a>
+        <a href="?lang=ar<?= $idParam ?>" class="hover:text-blue-800"><?= $tr['AR'] ?></a>
         <span class="text-gray-600">|</span>
-        <a href="?lang=en" class="hover:text-blue-800"><?= $tr['ENG'] ?></a>
+        <a href="?lang=en<?= $idParam ?>" class="hover:text-blue-800"><?= $tr['ENG'] ?></a>
       </div>
+
       <div class="flex items-center gap-2 text-sm text-blue-900 font-medium <?= $lang === 'ar' ? 'flex-row-reverse' : '' ?>">
         <i class="fas fa-phone-alt text-sm"></i>
         <span>+216 28 444 303</span>

@@ -9,8 +9,7 @@ $villas = [
         'ville' => 'Lac 2',
         'type' => 'Locaux commerciaux',
         'pieces' => 4,
-        'description' => "À louer un local commercial d’une superficie de 80 m2 avec mezzanine 19 m2 situé au Lac 2.
-        Fonds de commerce : 420.000 DT",
+        'description' => "descriptionid1",
         'transaction' => 'vente',
         'image' => 'images/1/DSC_0251.jpg',
         'image_secondaire_1' => 'images/1/DSC_0251.jpg',
@@ -20,11 +19,11 @@ $villas = [
         'image_secondaire_5' => 'images/1/DSC_0277.jpg',
         'image_secondaire_6' => '',
         'caracteristiques' => [
-            'type_bien' => 'locaux commerciaux',
-            'climatisation' => true,
-            'chauffage_central' => true,
-            'securite' => true
-        ]
+            'type_bien',
+            'climatisation',
+            'chauffage_central',
+            'securite',
+        ],
     ],
     [
         'id' => 2,

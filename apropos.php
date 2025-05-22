@@ -17,6 +17,7 @@
 
   <!-- Header -->
   <?php include('header.php'); ?>
+  <div style="height: 120px;"></div>
 
  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <!-- Section principale avec texte à droite et image à gauche (pour les langues RTL) -->

@@ -111,5 +111,12 @@ return [
 "Locaux commerciaux" => "محلات تجارية",
 "Lac 2" => "ضفاف البحيرة 2",
 "Superbe Duplex S+3 Meublé avec Vue Mer - Golden Tulip Gammarth" => "دوبلكس مفروش فاخر صالون و4 غرف مع إطلالة على البحر – جولدن توليب قمرت",
-
+"descriptionid1" => "للإيجار: محل تجاري بمساحة 80 م² مع ميزانين بمساحة 19 م² يقع في لاك 2. رأس المال التجاري: 420,000 دينار تونسي.",
+ 'caracteristiques' => [
+    'type_bien' => 'نوع العقار',
+    'climatisation' => 'تكييف الهواء',
+    'chauffage_central' => 'تدفئة مركزية',
+    'securite' => 'الأمن',
+  ],
+  
 ];

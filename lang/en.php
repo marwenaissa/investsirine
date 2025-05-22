@@ -111,7 +111,13 @@ return [
 "Lac 2" => "Lac 2",
 "Superbe Duplex S+3 Meublé avec Vue Mer - Golden Tulip Gammarth" => "Beautiful Furnished 3-Bedroom Duplex with Sea View - Golden Tulip Gammarth",
 "Jean Dupont" =>  "Jean Dupont",
-
+"descriptionid1" => "For rent: a commercial space of 80 m² with a 19 m² mezzanine located in Lac 2. Business assets: 420,000 DT",
+'caracteristiques' => [
+'type_bien' => 'Property type',
+'climatisation' => 'Air conditioning',
+'chauffage_central' => 'Central heating',
+'securite' => 'Security',
+],
 
 
 ];

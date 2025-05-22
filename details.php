@@ -10,6 +10,20 @@
     body {
       font-family: 'Montserrat', sans-serif;
     }
+    .direction-rtl {
+  direction: rtl;
+}
+
+.rtl-list {
+  direction: rtl;
+  padding-right: 1.25rem; /* équivalent à pr-5 */
+  list-style-position: inside;
+}
+
+.rtl-list li {
+  text-align: right;
+}
+
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -31,6 +45,7 @@ foreach ($villas as $villa) {
 
   <!-- Header -->
   <?php include('header.php'); ?>
+  <div style="height: 120px;"></div>
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
 
@@ -51,72 +66,73 @@ foreach ($villas as $villa) {
    <!-- Prix & Propriétaire alignés à gauche -->
     <div class="mb-8 space-y-2 <?= ($lang == 'ar') ? 'text-right' : 'text-left' ?>">
       <p class="text-xl text-green-600 font-semibold"><?= number_format($villaChoisie['prix'], 0, ',', ' ') ?> TND</p>
-        <p class="text-gray-700">
-            <?php if ($lang === 'ar'): ?>
-                <span class="font-medium">Jean Dupont</span> : <?= $tr['Propriétaire'] ?>
-            <?php else: ?>
-                <?= $tr['Propriétaire'] ?> : <span class="font-medium">Jean Dupont</span>
-            <?php endif; ?>
-        </p>
+       
     </div>
 
 
     <!-- Galerie de 6 images -->
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12">
-      <?php
-      // Boucle sur les images secondaires si elles existent
-      for ($i = 1; $i <= 6; $i++) {
-          $key = 'image_secondaire_' . $i;
-          if (!empty($villaChoisie[$key])) {
-              echo '<img src="' . htmlspecialchars($villaChoisie[$key]) . '" 
-                        class="rounded-lg shadow-md object-cover w-full h-48" 
-                        alt="photo secondaire">';
-          }
-      }
-      ?>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12 <?= $lang === 'ar' ? 'direction-rtl' : '' ?>">
+        <?php
+        $images = [];
 
-    </div>
+        for ($i = 1; $i <= 6; $i++) {
+            $key = 'image_secondaire_' . $i;
+            if (!empty($villaChoisie[$key])) {
+                $images[] = $villaChoisie[$key];
+            }
+        }
 
-    <!-- Bloc Description & Caractéristiques -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        // Inverser les images si la langue est l'arabe
+        if ($lang === 'ar') {
+            $images = array_reverse($images);
+        }
 
-      <!-- Description -->
-      <div>
-        <h2 class="text-2xl font-semibold text-blue-700 mb-3"><?= $tr['Description_details'] ?> </h2>
-        <p class="text-gray-700 leading-relaxed">
-          <?= $villaChoisie['description'] ?>
-        </p>
-      </div>
-
-      <!-- Caractéristiques -->
-      <div>
-        <h2 class="text-2xl font-semibold text-blue-700 mb-3"><?= $tr['Caractéristiques'] ?></h2>
-        <ul class="text-gray-700 list-disc list-inside space-y-2">
-          <?php foreach ($villaChoisie['caracteristiques'] as $key => $value): ?>
-              <li>
-                  <?php
-                  // Si la clé est numérique, c'est une entrée sans valeur : on affiche la valeur comme label
-                  if (is_int($key)) {
-                      $label = ucfirst(str_replace('_', ' ', $value));
-                      echo $label;
-                  } else {
-                      // Sinon, clé => valeur
-                      $label = ucfirst(str_replace('_', ' ', $key));
-                      if (is_bool($value)) {
-                          echo $label . ' : ' . ($value ? 'Oui' : 'Non');
-                      } else {
-                          echo $label . ' : ' . $value;
-                      }
-                  }
-                  ?>
-              </li>
-          <?php endforeach; ?>
-        </ul>
+        foreach ($images as $img) {
+            echo '<img src="' . htmlspecialchars($img) . '" 
+                      class="rounded-lg shadow-md object-cover w-full h-48" 
+                      alt="photo secondaire">';
+        }
+        ?>
       </div>
 
 
+   <!-- Bloc Description & Caractéristiques -->
+<div class="flex flex-col md:flex-row <?= $lang === 'ar' ? 'md:flex-row-reverse' : '' ?> gap-8">
 
-    </div>
+  <!-- Description -->
+  <div class="<?= $lang === 'ar' ? 'text-right' : 'text-left' ?> md:w-1/2">
+    <h2 class="text-2xl font-semibold text-blue-700 mb-3"><?= $tr['Description_details'] ?></h2>
+    <p class="text-gray-700 leading-relaxed <?= $lang === 'ar' ? 'text-right' : 'text-left' ?>">
+      <?= $tr[$villaChoisie['description']] ?>
+    </p>
+  </div>
+
+  <!-- Caractéristiques -->
+  <div class="<?= $lang === 'ar' ? 'text-right' : 'text-left' ?> md:w-1/2">
+    <h2 class="text-2xl font-semibold text-blue-700 mb-3"><?= $tr['Caractéristiques'] ?></h2>
+    <ul class="space-y-2 text-gray-700 list-disc <?= $lang === 'ar' ? 'rtl-list' : 'pl-5' ?>">
+      <?php foreach ($villaChoisie['caracteristiques'] as $key => $value): ?>
+        <li class="<?= $lang === 'ar' ? 'rtl' : '' ?>">
+          <?php
+            if (is_int($key)) {
+              $label = $tr['caracteristiques'][$value] ?? ucfirst(str_replace('_', ' ', $value));
+              echo $label;
+            } else {
+              $label = $tr['caracteristiques'][$key] ?? ucfirst(str_replace('_', ' ', $key));
+              if (is_bool($value)) {
+                echo $label . ' : ' . ($value ? ($tr['oui'] ?? 'Oui') : ($tr['non'] ?? 'Non'));
+              } else {
+                echo $label . ' : ' . $value;
+              }
+            }
+          ?>
+        </li>
+      <?php endforeach; ?>
+    </ul>
+  </div>
+
+</div>
+
 
   </main>
 
