@@ -11,7 +11,7 @@
         <?= $tr['adresse_invest'] ?>
       </p>
       <p class="<?= $lang === 'ar' ? 'text-right' : '' ?>"><?= $tr['email'] ?></p>
-      <p class="<?= $lang === 'ar' ? 'text-right' : '' ?>"><?= $tr['tel'] ?></p>
+      <p class="<?= $lang === 'ar' ? 'text-right' : '' ?>"><?= $tr['phone'] ?></p>
     </div>
 
     <!-- Bloc Réseaux Sociaux -->

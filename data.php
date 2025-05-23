@@ -5,7 +5,7 @@ $villas = [
     [
         'id' => 1,
         'nom' => 'local_commercial_au_lac_2',
-        'prix' => 4200000,
+        'prix' => 420000,
         'ville' => 'Lac 2',
         'type' => 'Locaux commerciaux',
         'pieces' => 4,

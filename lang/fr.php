@@ -72,9 +72,9 @@ return [
     'form_tel' => 'Tel',
     'form_message' => 'Message',
     'submit' => 'Envoyer',
-    'address' => '📍 123 Avenue des Investissements, Paris',
+    'address' => '📍 Immeuble résidence la baie du lac, appartement N° 23 – Tunis lot 3-4-4 cité les pins, Lac 2.',
     'email' => '📧 Email : contact@invest.fr',
-    'phone' => '📞 +216 123 456',
+    'phone' => '📞 +216 28 444 303 / +216 29 65 65 63',
     'video_title' => 'Vidéo de présentation',
     'service_image_alt' => 'Service client et contact professionnel',
      'title' => 'Liste des villas',
@@ -122,7 +122,7 @@ return [
 "Locaux commerciaux" => "Locaux commerciaux",
 "Lac 2" => "Lac 2",
 "Jean Dupont" =>  "Jean Dupont",
-"descriptionid1" => "À louer un local commercial d’une superficie de 80 m2 avec mezzanine 19 m2 situé au Lac 2.
+"descriptionid1" => "À vendre un local commercial d’une superficie de 80 m2 avec mezzanine 19 m2 situé au Lac 2.
 Fonds de commerce : 420.000 DT",
 'caracteristiques' => [
 'type_bien' => 'Type de bien',
@@ -130,6 +130,7 @@ Fonds de commerce : 420.000 DT",
 'chauffage_central' => 'Chauffage central',
 'securite' => 'Sécurité',
 ],
+ 'TND'=> 'TND'
 
 
 ];

@@ -65,10 +65,9 @@ foreach ($villas as $villa) {
     <!-- Prix & Propriétaire -->
    <!-- Prix & Propriétaire alignés à gauche -->
     <div class="mb-8 space-y-2 <?= ($lang == 'ar') ? 'text-right' : 'text-left' ?>">
-      <p class="text-xl text-green-600 font-semibold"><?= number_format($villaChoisie['prix'], 0, ',', ' ') ?> TND</p>
+        <p class="text-xl text-green-600 font-semibold"><?= number_format($villaChoisie['prix'], 0, ',', ' ') ?></p>
        
     </div>
-
 
     <!-- Galerie de 6 images -->
     <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-12 <?= $lang === 'ar' ? 'direction-rtl' : '' ?>">
