@@ -306,13 +306,12 @@ else
                     if (!empty($res1)) {
                         foreach ($res1 as $estimation) {
                             $nom = htmlspecialchars($estimation['nom']);
-                            $type = htmlspecialchars($estimation['tel']);
-                            $localisation = htmlspecialchars($estimation['localisation']);
-                            $tel = htmlspecialchars($contact['tel']);
+                            $tel = htmlspecialchars($estimation['tel']);
+                            $type = htmlspecialchars($estimation['type']);
                             
                             echo '<li class="list-group-item d-flex justify-content-between align-items-center">';
                             echo $nom;
-                            echo ' <span class="badge badge-primary badge-pill">' . $type . ' - ' . $tel . '</span>';
+                            echo ' <span class="badge badge-primary badge-pill">' . $tel . ' - ' . $type . '</span>';
                             echo '</li>';
                         }
                     } else {
