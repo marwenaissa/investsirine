@@ -67,13 +67,7 @@
   </div>
 </section>
 
-<div class="overflow-hidden whitespace-nowrap">
-  <div class="animate-marquee inline-block">
-    <span class="text-2xl font-semibold text-gray-700 tracking-wider font-serif transform-gpu shadow-lg hover:shadow-xl">
-      Découvrez nos propriétés exclusives! Des maisons, appartements et terrains. Faites le choix du confort et de l'élégance avec Invest Immobilière.
-    </span>
-  </div>
-</div>
+
 
 <style>
   .animate-marquee {

@@ -53,7 +53,6 @@ $villas = [
         'image_secondaire_5' => 'images/2/IMG13.jpg',
         'image_secondaire_6' => '',
         'caracteristiques' => [
-            'type_bien' => 'villa',
             'chauffage_au_sol' => true,
             'climatisation_split' => true,
             'terrasses_vue_mer' => 2,
@@ -70,16 +69,7 @@ $villas = [
         'ville' => 'Gammarth',
         'type' => 'appartement',
         'pieces' => 4,
-        'description' => "Un magnifique duplex S+3,entièrement meublé, d’une superficie de 200 m², avec une vue mer exceptionnelle.
-        Idéalement situé à Gammarth, dans une résidence hautement sécurisée et calme,à quelques pas de l’hôtel Golden Tulip
-        Parmi les nombreux avantages de la résidence :
-        Un spa, une salle de sport, un hammam, un sauna, une piscine couverte et une
-        piscine extérieure, deux terrains de tennis, un restaurant français et indien, etc.
-        Composition du bien :
-        Rez-de-chaussée : Salon spacieux et lumineux avec salle à manger ;
-        Cuisine entièrement équipée ;Salle d’eau invités ; Accès à un jardin privé
-        À l’étage : Suite parentale avec dressing, salle de bain et terrasse avec vue mer
-        Deux chambres à coucher avec dressings ;une salle de bain partagée",
+        'description' => "descriptionid5",
         'transaction' => 'location',
         'image' => 'images/3/1.jpg',
         'image_secondaire_1' => 'images/3/2.jpg',
@@ -89,13 +79,11 @@ $villas = [
         'image_secondaire_5' => 'images/3/583430253.jpg',
         'image_secondaire_6' => 'images/3/DSC_0069.jpg',
         'caracteristiques' => [
-            'vue_sur_mer' => true,
-            'chauffage_central' => true,
-            'climatisation' => true,
-            'animaux_autorises' => true,
-            'securite_24h' => true,
-
-
+            'vue_sur_mer' ,
+            'chauffage_central' ,
+            'climatisation' ,
+            'animaux_autorises' ,
+            'securite_24h' ,
         ]
     ],
     [

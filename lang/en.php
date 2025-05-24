@@ -3,7 +3,7 @@ return [
     'buy' => 'Buy',
     'rent' => 'Rent',
     'sell' => 'Sell',
-    'about' => 'About',
+    'about' => 'About ',
     'contact' => 'Contact',
     'language_fr' => 'FR',
     'language_ar' => 'AR',
@@ -72,7 +72,7 @@ return [
     'form_tel' => 'Phone',
     'form_message' => 'Message',
     'submit' => 'Send',
-    'address' => '📍 123 Investment Avenue, Paris',
+    'address' => '📍 Building "The Bay of the Lake Residence", Flat No. 23 – Tunis, Plot 3-4-4, The Pines District, Lac 2.',
     'email' => '📧 Email : contact@invest.com',
     'phone' => '📞 +216 123 456',
     'video_title' => 'Presentation Video',
@@ -99,7 +99,6 @@ return [
 'AR' => 'AR',
 'villa_avec_vue_sur_mer_a_hammamet' => 'Villa with sea view in Hammamet',
 'local_commercial_au_lac_2' => 'Commercial space at Lac 2',
-'adresse_invest' => '12 Investment Street, Paris',
 'tel' => 'Phone : +216 123 456',
 'Caractéristiques' => 'Characteristics',
 'Description_details' => 'Description',
@@ -117,8 +116,31 @@ return [
 'climatisation' => 'Air conditioning',
 'chauffage_central' => 'Central heating',
 'securite' => 'Security',
+'chauffage_au_sol' => 'Underfloor heating',
+    'climatisation_split' => 'Split air conditioning',
+    'terrasses_vue_mer' => '2 sea-view terraces',
+    'jacuzzi' => 'Jacuzzi',
+    'cheminees' => 'Fireplaces',
+    'piano' => 'Piano',
+    'home_cinema' => 'Home theater',
+    'vue_sur_mer' => 'Sea view',
+    'chauffage_central' => 'Central heating',
+    'climatisation' => 'Air conditioning',
+    'animaux_autorises' => 'Pets allowed',
+    'securite_24h' => '24/7 security',
+
 ],
- 'TND'=> 'TND'
+ 'TND'=> 'TND',
+ "descriptionid5" => "Un magnifique duplex S+3,entièrement meublé, d’une superficie de 200 m², avec une vue mer exceptionnelle.
+        Idéalement situé à Gammarth, dans une résidence hautement sécurisée et calme,à quelques pas de l’hôtel Golden Tulip
+        Parmi les nombreux avantages de la résidence :
+        Un spa, une salle de sport, un hammam, un sauna, une piscine couverte et une
+        piscine extérieure, deux terrains de tennis, un restaurant français et indien, etc.
+        Composition du bien :
+        Rez-de-chaussée : Salon spacieux et lumineux avec salle à manger ;
+        Cuisine entièrement équipée ;Salle d’eau invités ; Accès à un jardin privé
+        À l’étage : Suite parentale avec dressing, salle de bain et terrasse avec vue mer
+        Deux chambres à coucher avec dressings ;une salle de bain partagée",
 
 
 ];

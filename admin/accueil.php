@@ -258,7 +258,7 @@ else
                     <div class="card-body pb-0">
                        
                         <div class="text-light text-sm mb-2">
-                            <i class="ti-user" style="font-size: 24px;"></i> Contacts
+                            <i class="ti-user" style="font-size: 24px;"></i> Admin
                         </div>
 
                         <h4 class="mb-0">

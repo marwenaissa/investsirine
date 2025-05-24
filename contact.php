@@ -2,7 +2,29 @@
 // Include the trfile
 $tr = include("lang/fr.php");
 ?>
+<?php
+require_once 'connexion.php';
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $nom = $_POST['nom'];
+    $email = $_POST['email'];
+    $tel = $_POST['tel'];
+    $message = $_POST['message'];
 
+    try {
+        $cnx = Connexion::getInstance()->getConnexion();
+        $sql = "INSERT INTO contact (nom, email, tel, message, lue) VALUES (:nom, :email, :tel, :message, 0)";
+        $stmt = $cnx->prepare($sql);
+        $stmt->execute([
+            ':nom' => $nom,
+            ':email' => $email,
+            ':tel' => $tel,
+            ':message' => $message
+        ]);
+    } catch (PDOException $e) {
+        echo "Erreur lors de l'envoi : " . $e->getMessage();
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

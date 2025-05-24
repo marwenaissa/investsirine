@@ -72,8 +72,8 @@ return [
     'form_tel' => 'الهاتف',
     'form_message' => 'الرسالة',
     'submit' => 'إرسال',
-    'address' => '📍  إقامة خليج البحيرة  شقة رقم 23 – تونس رقم 3-4-4 ، حي الصنوبر، البحيرة 2  ',
-'email' => 'contact@invest.com : البريد الإلكتروني 📧',
+    'address' => ' إقامة خليج البحيرة  شقة رقم 23 – تونس رقم 3-4-4 ، حي الصنوبر، البحيرة 2 📍  ',
+'email' => 'contact@invest.com : البريد الإلكتروني ',
     'phone' => ' +216 28 444 303 / +216 29 65 65 63 📞',
     'video_title' => 'فيديو التعريف',
     'service_image_alt' => 'خدمة العملاء والاتصال المهني',
@@ -99,7 +99,6 @@ return [
 'AR' => 'العربية',
 'villa_avec_vue_sur_mer_a_hammamet' => 'فيلا بإطلالة على البحر في الحمامات',
 'local_commercial_au_lac_2' => 'محل تجاري في البحيرة 2',
-'adresse_invest' => '12 شارع الاستثمار، باريس',
 'tel' => '+الهاتف: 216 123 456', 
 'Caractéristiques' => 'الخصائص', 
 'Description_details' => 'الوصف',
@@ -117,9 +116,33 @@ return [
     'climatisation' => 'تكييف الهواء',
     'chauffage_central' => 'تدفئة مركزية',
     'securite' => 'الأمن',
+    'chauffage_au_sol' => 'تدفئة أرضية',
+    'climatisation_split' => 'تكييف سبليت',
+    'terrasses_vue_mer' => 'شرفتان بإطلالة على البحر',
+    'jacuzzi' => 'جاكوزي',
+    'cheminees' => 'مدافئ',
+    'piano' => 'بيانو',
+    'home_cinema' => 'نظام سينما منزلية',
+    'vue_sur_mer' => 'إطلالة على البحر',
+    'chauffage_central' => 'تدفئة مركزية',
+    'climatisation' => 'تكييف هواء',
+    'animaux_autorises' => 'مسموح بالحيوانات الأليفة',
+    'securite_24h' => 'أمن على مدار الساعة',
+
   ],
 'local_commercial_au_lac_2' => 'محل تجاري في ضفاف البحيرة 2',
 
- 'TND'=> 'دت'
+ 'TND'=> 'دت',
+ "descriptionid5" => "Un magnifique duplex S+3,entièrement meublé, d’une superficie de 200 m², avec une vue mer exceptionnelle.
+        Idéalement situé à Gammarth, dans une résidence hautement sécurisée et calme,à quelques pas de l’hôtel Golden Tulip
+        Parmi les nombreux avantages de la résidence :
+        Un spa, une salle de sport, un hammam, un sauna, une piscine couverte et une
+        piscine extérieure, deux terrains de tennis, un restaurant français et indien, etc.
+        Composition du bien :
+        Rez-de-chaussée : Salon spacieux et lumineux avec salle à manger ;
+        Cuisine entièrement équipée ;Salle d’eau invités ; Accès à un jardin privé
+        À l’étage : Suite parentale avec dressing, salle de bain et terrasse avec vue mer
+        Deux chambres à coucher avec dressings ;une salle de bain partagée",
+        
 
 ];

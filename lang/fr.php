@@ -108,7 +108,6 @@ return [
 'AR' => 'AR',
 'villa_avec_vue_sur_mer_a_hammamet' => 'Villa avec vue sur mer à Hammamet',
 'local_commercial_au_lac_2' => 'Local commercial au Lac 2',
-'adresse_invest' => '12 Rue de l\'Investissement, Paris',
 'tel' => 'Tél : +216 123 456',
 'Caractéristiques' => 'Caractéristiques',
 'Description_details' => 'Description',
@@ -129,9 +128,30 @@ Fonds de commerce : 420.000 DT",
 'climatisation' => 'Climatisation',
 'chauffage_central' => 'Chauffage central',
 'securite' => 'Sécurité',
+'chauffage_au_sol' => 'Chauffage au sol',
+    'climatisation_split' => 'Climatisation split',
+    'terrasses_vue_mer' => '2 terrasses avec vue sur mer',
+    'jacuzzi' => 'Jacuzzi',
+    'cheminees' => 'Cheminées',
+    'piano' => 'Piano',
+    'home_cinema' => 'Home cinéma',
+    'vue_sur_mer' => 'Vue sur mer',
+    'chauffage_central' => 'Chauffage central',
+    'climatisation ' => ' Climatisation',
+    'animaux_autorises' => 'Animaux autorisés',
+    'securite_24h' => 'Sécurité 24h/24',
 ],
- 'TND'=> 'TND'
+ 'TND'=> 'TND',
 
-
+"descriptionid5" => "Un magnifique duplex S+3,entièrement meublé, d’une superficie de 200 m², avec une vue mer exceptionnelle.
+        Idéalement situé à Gammarth, dans une résidence hautement sécurisée et calme,à quelques pas de l’hôtel Golden Tulip
+        Parmi les nombreux avantages de la résidence :
+        Un spa, une salle de sport, un hammam, un sauna, une piscine couverte et une
+        piscine extérieure, deux terrains de tennis, un restaurant français et indien, etc.
+        Composition du bien :
+        Rez-de-chaussée : Salon spacieux et lumineux avec salle à manger ;
+        Cuisine entièrement équipée ;Salle d’eau invités ; Accès à un jardin privé
+        À l’étage : Suite parentale avec dressing, salle de bain et terrasse avec vue mer
+        Deux chambres à coucher avec dressings ;une salle de bain partagée",
 ];
 

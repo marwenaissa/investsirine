@@ -260,8 +260,8 @@ else
                                 <table class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Idfam</th>
-                                            <th scope="col">Designationf</th>
+                                            <th scope="col">Id</th>
+                                            <th scope="col">Tel</th>
                                             <th scope="col">Action</th>
                                         </tr>
                                     </thead>
